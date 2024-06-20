@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import Home from './pages/Home'
+import Home from './pages/Home';
+import About from './pages/About';
+import Projects from './pages/Projects';
 
 const generateRandomPercent = (min = 0, max = 100) => {
   const randomInteger = Math.floor(Math.random() * (max + 1));
@@ -32,11 +34,15 @@ const App = () => {
   }, []);
 
   return (
-  <div id="container" className="flex justify-center items-center h-screen">
-    <div>
-    <Home />
+    <div id="container" className="fixed top-0 left-0 w-screen h-screen bg-darkblue overflow-hidden">
+      {/* Starry background */}
+      <div className="relative z-10 h-full overflow-y-auto">
+        {/* Content container */}
+        <Home />
+        <About />
+        <Projects />
+      </div>
     </div>
-  </div>
   );
 };
 
