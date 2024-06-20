@@ -8,9 +8,11 @@ export default {
     extend: {
       colors: {
         'primary': '#f1e0ff',
+        'lighterSky' : "#1f154a",
+        'sky' : "070025",
       },
       fontFamily: {
-        'main-font': ['Montserrat', 'sans-serif'],
+        'mont': ['Montserrat', 'sans-serif'],
       },
     }
   },

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply font-sans;
+
+}
+
 #container {
   margin: 0;
   width: 100vw;
