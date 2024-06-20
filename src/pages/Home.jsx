@@ -5,7 +5,7 @@ const Home = () => {
             Hi, I'm Jappun.
         </div>
         <div className="flex justify-center text-xl text-primary font-mont-font mt-4">
-            Student | Software Developer | Secret3rdThing
+            Student | Software Developer | Writer
         </div>
     </div>
 );};
