@@ -23,10 +23,10 @@ export const projects = [
       github: "https://github.com/jappun/workout-journal"
   },
   {
-    title: "Personal Dictionary",
+    title: "LexiLog",
     tech: ["HTML", "CSS", "JavaScript"],
     description:
-      "A Chrome Extension where users can search and save word, with definitions and their own notes. Powered by the Wordnik API",
+      "Powered by the Wordnik API, LexiLog is a personal dictionary Chrome Extension. Users can search and save words with their preferred definition and any personal notes.",
       img: dictionary,
       github: "https://github.com/jappun/dict-chrome"
   },
@@ -42,7 +42,7 @@ export const projects = [
     title: "InsightUBC",
     tech: ["TypeScript", "JavaScript", "React", "Postman"],
     description:
-      "Fullstack web application where users can filter through historical UBC course data.",
+      "Fullstack web application where users can filter through historical UBC course data. This was built for a UBC course, so I cannot share the code. Demo video coming soon!",
       img: insightubc,
   },
   {
