@@ -54,7 +54,7 @@ const About = () => {
 
         <div className="flex flex-col items-center justify-center mx-4 md:mx-16"> 
                 <div className="w-full md:w-3/4 lg:w-3/4 xl:w-3/4 md:flex md:mx-16 space-x-12"> 
-                    <div className="flex-1 text-primary bg-lighterSky rounded-2xl p-4 font-mont text-xl text-left md:p-8 md:text-xl my-10">
+                    <div className="flex-1 text-primary bg-lighterSky bg-opacity-70 rounded-2xl p-4 font-mont text-xl text-left md:p-8 md:text-xl my-10">
                         <p>Hi, I'm Jappun Dhillon. It looks like you've found my little corner of the Internet. Happy to have you here!</p>
                         <br />
                         <p>I'm a fourth-year student at the University of British Columbia, pursuing a dual major in Computer Science and English Literature. Both in and out of school, I'm always looking to expand my skillset. Right now, I'm spending a lot of time learning about frontend development and machine learning.</p>

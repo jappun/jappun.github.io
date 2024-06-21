@@ -41,7 +41,7 @@ export const ProjectCard = ({ items, className }) => {
 
 export const Card = ({ className, children }) => {
   return (
-    <div className={cn("rounded-2xl h-full w-full p-4 overflow-hidden bg-lighterSky border border-transparent group-hover:border-slate-700 relative z-20", className)}>
+    <div className={cn("rounded-2xl h-full w-full p-4 overflow-hidden bg-lighterSky bg-opacity-70 hover:bg-opacity-100 border border-transparent group-hover:border-slate-700 relative z-20", className)}>
       <div className="relative z-50">
         <div className="p-2">{children}</div>
       </div>
