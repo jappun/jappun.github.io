@@ -3,6 +3,7 @@ import workoutjournal from "../img/workoutjournal.png"
 import erdiagram from "../img/ER-diagram.png"
 import dictionary from "../img/dictionary.png"
 import insightubc from "../img/insightubc.png"
+import portfolio from "../img/portfolio.png"
 
 export const projects = [
   {
@@ -43,6 +44,14 @@ export const projects = [
     description:
       "Fullstack web application where users can filter through historical UBC course data.",
       img: insightubc,
+  },
+  {
+    title: "Portfolio",
+    tech: ["JavaScript", "Tailwind CSS", "React", "Vite"],
+    description:
+      "The website you're on now!",
+      img: portfolio,
+      github: "https://github.com/jappun/jappun.github.io"
   },
 ];
 
