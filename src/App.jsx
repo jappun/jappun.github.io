@@ -2,6 +2,11 @@ import React, { useEffect } from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import NavBar from './components/NavBar';
+
+
+
 
 const generateRandomPercent = (min = 0, max = 100) => {
   const randomInteger = Math.floor(Math.random() * (max + 1));
@@ -28,19 +33,24 @@ const renderStars = (amount = 30) => {
   container.append(...starsArray);
 };
 
+
 const App = () => {
   useEffect(() => {
     renderStars();
   }, []);
+
+
+
 
   return (
     <div id="container" className="fixed top-0 left-0 w-screen h-screen bg-darkblue overflow-hidden">
       {/* Starry background */}
       <div className="relative z-10 h-full overflow-y-auto">
         {/* Content container */}
-        <Home />
-        <About />
-        <Projects />
+        <NavBar />
+        <Home/>
+        <About/>
+        <Projects/>
       </div>
     </div>
   );

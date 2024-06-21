@@ -5,6 +5,6 @@ The star background was adapted from [this animation](https://codepen.io/chrisks
 
 ## ToDo List
 - [ ] Add nav bar
-- [ ] Make About Me section responsive (i.e. fix mobile view)
+- [ x ] Make About Me section responsive (i.e. fix mobile view)
 - [ ] Add animation to About Me
 - [ ] Add live/demo links to all projects
