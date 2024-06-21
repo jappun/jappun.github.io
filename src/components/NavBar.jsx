@@ -1,16 +1,33 @@
-const NavBar = () => {
+import React, { useRef } from 'react';
+
+const NavBar = ({homeRef, aboutRef, projectsRef}) => {
+
+    const goToHome = () => {
+        homeRef.current.scrollIntoView({ behavior: 'smooth' });
+      };
+    
+      const goATobout = () => {
+        aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+      };
+    
+      const goToProjects = () => {
+        projectsRef.current.scrollIntoView({ behavior: 'smooth' });
+      };
+    
+    
+
     return (
     <div className="font-mont hidden md:flex min-w-screen max-h-screen justify-between items-center text-md text-primary sticky mx-4 mt-4 mb-0 top-4">
         <div className="flex gap-4">
-            <div className="hover:underline hover:text-white">
+            <button className="hover:underline hover:text-white" onClick={goToHome}>
                 Home
-            </div>
-            <div className="hover:underline hover:text-white">
+            </button>
+            <button className="hover:underline hover:text-white" onClick={goATobout}>
                 About
-            </div>
-            <div className="hover:underline hover:text-white">
+            </button>
+            <button className="hover:underline hover:text-white" onClick={goToProjects}>
                 Projects
-            </div>
+            </button>
         </div>
         {/* I may make contact info sticky. Not sure yet if I like how it looks.
         <div className="flex gap-4 items-center justify-start">

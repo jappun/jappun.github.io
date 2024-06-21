@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from './components/NavBar';
 
 
@@ -39,18 +38,27 @@ const App = () => {
     renderStars();
   }, []);
 
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
 
 
 
   return (
+    // Stars
     <div id="container" className="fixed top-0 left-0 w-screen h-screen bg-darkblue overflow-hidden">
-      {/* Starry background */}
+      {/* Content */}
       <div className="relative z-10 h-full overflow-y-auto">
-        {/* Content container */}
-        <NavBar />
-        <Home/>
-        <About/>
-        <Projects/>
+        <NavBar homeRef={homeRef} aboutRef={aboutRef} projectsRef={projectsRef} />
+        <section ref={homeRef}>
+          <Home />
+        </section>
+        <section ref={aboutRef}>
+          <About />
+        </section>
+        <section ref={projectsRef}>
+          <Projects />
+        </section>
       </div>
     </div>
   );
