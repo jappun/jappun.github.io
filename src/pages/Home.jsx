@@ -5,11 +5,11 @@ const Home = () => {
         
 
             <div className="flex flex-col">
-                <div className=" text-primary w-full text-7xl font-extrabold text-center mt-4">
+                <div className=" text-primary w-full text-7xl font-extrabold text-center">
                     Jappun Dhillon
                 </div>
                 <div className="max-w-screen flex justify-center text-lg text-center text-primary mt-4 mx-4">
-                    Building software. Telling stories. Finding the narratives in both.
+                    Building software. Telling stories. Finding narratives with both.
                 </div>
             </div>
 
