@@ -5,7 +5,7 @@ const Home = () => {
             Hi, I'm Jappun.
         </div>
         <div className="max-w-screen flex justify-center text-lg text-primary mt-4 mx-4">
-            Student | Software Developer | Writer
+            Building software. Telling stories. Finding the narratives in both.
         </div>
     </div>
 );};

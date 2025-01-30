@@ -59,6 +59,10 @@ const App = () => {
         <section ref={projectsRef}>
           <Projects />
         </section>
+        <div classNAme="w-full">
+          <p className="text-center text-primary">© 2025 Jappun Dhillon. All rights reserved.</p>
+        </div>
+
       </div>
     </div>
   );
