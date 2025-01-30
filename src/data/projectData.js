@@ -4,8 +4,18 @@ import erdiagram from "../img/ER-diagram.png"
 import dictionary from "../img/dictionary.png"
 import insightubc from "../img/insightubc.png"
 import portfolio from "../img/portfolio.png"
+import gather from "../img/gather.png"
 
 export const projects = [
+  {
+    title: "Gather",
+    tech: ["Next.js", "React", "Tailwind CSS", "Supabase"],
+    description:
+    "An event planning web app where you can create invite friends to your events, assign tasks, and splits expenses",
+    img: gather,
+      github: "https://github.com/jappun/gather",
+
+  },
   {
     title: "HerVision",
     tech: ["Swift", "xCode"],
@@ -15,20 +25,20 @@ export const projects = [
       github: "https://github.com/jappun/her-vision",
   },
   {
+    title: "LexiLog",
+    tech: ["HTML", "CSS", "JavaScript", "Worknik API"],
+    description:
+      "Powered by the Wordnik API, LexiLog is a personal dictionary Chrome Extension. Users can search and save words with their preferred definition and any personal notes.",
+      img: dictionary,
+      github: "https://github.com/jappun/dict-chrome"
+  },
+  {
     title: "Workout Journal",
     tech: ["Java", "JSON", "JUnit"],
     description:
       "Java GUI where users can track their workouts. Complete with data persistence.",
       img: workoutjournal,
       github: "https://github.com/jappun/workout-journal"
-  },
-  {
-    title: "LexiLog",
-    tech: ["HTML", "CSS", "JavaScript"],
-    description:
-      "Powered by the Wordnik API, LexiLog is a personal dictionary Chrome Extension. Users can search and save words with their preferred definition and any personal notes.",
-      img: dictionary,
-      github: "https://github.com/jappun/dict-chrome"
   },
   {
     title: "Community Centre Database",
