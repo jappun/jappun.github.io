@@ -55,15 +55,15 @@ const About = () => {
         <div className="flex flex-col items-center justify-center mx-4 md:mx-16"> 
                 <div className="w-full md:w-3/4 lg:w-3/4 xl:w-3/4 md:flex md:mx-16 space-x-12"> 
                     <div className="flex-1 text-primary bg-lighterSky bg-opacity-70 rounded-2xl p-4 font-mont text-lg text-left md:p-8 my-10">
-                        <p className="text-xl">Hi, I'm Jappun Dhillon. Welcome to my little corner of the Internet. Happy to have you here!</p>
+                        <p className="text-xl">Welcome to my little corner of the Internet. Happy to have you here.</p>
                         <br />
                         <p>What I'm up to right now:</p>
                         <ul className="list-disc list-inside pl-6">
                             <br/>
                             <li>Studying Computer Science and English Literature at the University of British Columbia</li>
-                            <li>Working with <a className="underline" target="_blank" href="https://nlp.cs.ubc.ca/">UBC NLP</a> to research media bias</li>
-                            <li>Developing a <a className="underline" target="_blank" href="https://github.com/jappun/fire-prediction">wildfire prediction tool</a> with scikit-learn</li>
-                            <li>Building and teaching at <a className="underline" target="_blank" href="https://www.stemhouse.ca/">STEMhouse Learning</a></li>
+                            <li>Working with <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://nlp.cs.ubc.ca/">UBC NLP</a> to research media bias</li>
+                            <li>Developing a <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://github.com/jappun/fire-prediction">wildfire prediction tool</a> with scikit-learn</li>
+                            <li>Building and teaching at <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://www.stemhouse.ca/">STEMhouse Learning</a></li>
                         </ul>
                         <br />
                         <p>When I'm not coding, you can find me crafting up a new stageplay, half-marathon training, playing soccer or exploring local parks.</p>
