@@ -60,13 +60,13 @@ const About = () => {
                         <p>What I'm up to right now:</p>
                         <ul className="list-disc list-inside pl-6">
                             <br/>
+                            <li>Researching media bias with <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://nlp.cs.ubc.ca/">UBC NLP</a></li>
+                            <li>Developing a <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://github.com/jappun/fire-prediction">wildfire prediction tool</a> using scikit-learn</li>
+                            <li>Co-founding <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://www.stemhouse.ca/">STEMhouse Learning</a>and empowering the next generation of STEM leaders</li>
                             <li>Studying Computer Science and English Literature at the University of British Columbia</li>
-                            <li>Working with <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://nlp.cs.ubc.ca/">UBC NLP</a> to research media bias</li>
-                            <li>Developing a <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://github.com/jappun/fire-prediction">wildfire prediction tool</a> with scikit-learn</li>
-                            <li>Building and teaching at <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://www.stemhouse.ca/">STEMhouse Learning</a></li>
                         </ul>
                         <br />
-                        <p>When I'm not coding, you can find me crafting up a new stageplay, half-marathon training, playing soccer or exploring local parks.</p>
+                        <p>Outside all that, you can find me crafting up a new stageplay, half-marathon training, playing soccer or exploring local parks.</p>
                             <div className="flex items-center justify-start space-x-5 mt-4">
                             <a href="https://github.com/jappun" target="_blank" rel="noopener noreferrer" className="items-center justify-between">
                                 <svg className="w-12 h-12 text-primary hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
