@@ -58,12 +58,12 @@ const About = () => {
                         <p className="text-xl">Welcome to my little corner of the Internet. Happy to have you here.</p>
                         <br />
                         <p>What I'm up to right now:</p>
+                        <br/>
                         <ul className="list-disc list-inside pl-6">
-                            <br/>
-                            <li>Researching media bias with <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://nlp.cs.ubc.ca/">UBC NLP</a></li>
-                            <li>Developing a <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://github.com/jappun/fire-prediction">wildfire prediction tool</a> using scikit-learn</li>
-                            <li>Co-founding <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://www.stemhouse.ca/">STEMhouse Learning</a>and empowering the next generation of STEM leaders</li>
                             <li>Studying Computer Science and English Literature at the University of British Columbia</li>
+                            <li>Researching media bias with <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://nlp.cs.ubc.ca/">UBC's NLP Research Group</a></li>
+                            <li>Co-founding <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://www.stemhouse.ca/">STEMhouse</a>, where we empower the next generation of scientists and innovators</li>
+                            <li>Developing a <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://github.com/jappun/fire-prediction">wildfire prediction tool</a> using scikit-learn</li>
                         </ul>
                         <br />
                         <p>Outside all that, you can find me crafting up a new stageplay, half-marathon training, playing soccer or exploring local parks.</p>

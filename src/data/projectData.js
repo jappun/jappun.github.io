@@ -11,7 +11,7 @@ export const projects = [
     title: "Gather",
     tech: ["Next.js", "React", "Tailwind CSS", "Supabase"],
     description:
-    "Full-stack event planning web app where you can create invite friends to your events, assign tasks, and splits expenses.",
+    "Full-stack event planning web app where you can host events, invite friends, assign tasks, and splits expenses.",
     img: gather,
       github: "https://github.com/jappun/gather",
 
