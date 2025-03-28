@@ -18,15 +18,6 @@ export const projects = [
 
   },
   {
-    title: "Gather",
-    tech: ["Next.js", "React", "Tailwind CSS", "Supabase"],
-    description:
-    "Full-stack event planning web app where you can host events, invite friends, assign tasks, and splits expenses.",
-    img: gather,
-      github: "https://github.com/jappun/gather",
-
-  },
-  {
     title: "HerVision",
     tech: ["Swift", "xCode"],
     description:
@@ -49,6 +40,15 @@ export const projects = [
       "Java GUI where users can track their workouts. Complete with data persistence.",
       img: workoutjournal,
       github: "https://github.com/jappun/workout-journal"
+  },
+  {
+    title: "Gather",
+    tech: ["Next.js", "React", "Tailwind CSS", "Supabase"],
+    description:
+    "Full-stack event planning web app where you can host events, invite friends, assign tasks, and splits expenses.",
+    img: gather,
+      github: "https://github.com/jappun/gather",
+
   },
   {
     title: "Community Centre Database",
