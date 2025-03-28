@@ -6,7 +6,7 @@ export const ProjectCard = ({ items, className }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className={cn("grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10", className)}>
+    <div className={cn("grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-10", className)}>
       {items.map((item, idx) => (
         <div
           key={idx}

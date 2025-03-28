@@ -5,8 +5,18 @@ import dictionary from "../img/dictionary.png"
 import insightubc from "../img/insightubc.png"
 import portfolio from "../img/portfolio.png"
 import gather from "../img/gather.png"
+import busbuddies from "../img/busbuddies.png"
 
 export const projects = [
+  {
+    title: "BusBuddies",
+    tech: ["Next.js", "React", "Tailwind CSS", "Supabase", "Figma"],
+    description:
+    "Matching platform for UBC students to find study buddies on their daily commute. Users with UBC student emails can create a profile, search for matches, and chat with potential buddies.",
+    img: busbuddies,
+      github: "https://github.com/joy1234567891/BusBuddies",
+
+  },
   {
     title: "Gather",
     tech: ["Next.js", "React", "Tailwind CSS", "Supabase"],
