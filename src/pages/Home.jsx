@@ -8,8 +8,8 @@ const Home = () => {
                 <div className=" text-primary w-full text-7xl font-extrabold text-center">
                     Jappun Dhillon
                 </div>
-                <div className="max-w-screen flex justify-center text-lg text-center text-primary mt-4 mx-4">
-                    Building software. Telling stories. Finding narratives with both.
+                <div className="max-w-screen flex justify-center text-xl text-center text-primary mt-4 mx-4">
+                    UBC Student | Software Developer | Researcher
                 </div>
             </div>
 
