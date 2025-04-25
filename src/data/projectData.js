@@ -17,6 +17,7 @@ export const projects = [
     "Chrome extension that temporarily blocks AI tools for a user-set time period to motivate intentional AI usage and prevent overreliance.",
     img: aiblocker,
       github: "https://github.com/jappun/ai-blocker",
+      live: "https://chromewebstore.google.com/detail/should-i-ai/heakodlbffjmkafelmngkbdniebdboml"
 
   },
   {
