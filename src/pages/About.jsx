@@ -12,14 +12,13 @@ const About = () => {
                         <br />
                         <p>What I'm up to right now:</p>
                         <br/>
-                        <ul className="list-disc list-inside pl-6">
-                            <li>Studying Computer Science and English Literature at the University of British Columbia</li>
-                            <li>Researching media bias with <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://nlp.cs.ubc.ca/">UBC's NLP Research Group</a></li>
-                            <li>Developing a <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://github.com/jappun/fire-prediction">wildfire prediction tool</a> using scikit-learn</li>
-                    
+                        <ul className="list-disc list-outside pl-6">
+                            <li>Wrapping up my Computer Science and English Literature degree at the University of British Columbia. Figuring out what life will look like in May.</li>
+                            <li>Analyzing Canadian newsmedia with the <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://nlp.cs.ubc.ca/">UBC NLP Group</a></li>
+                            <li>Joined the <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://ccss.arts.ubc.ca/">UBC Centre for Computational Social Science</a> as a Research Fellow, where I'm exploring GenAI usage in K-12 education.</li>
                         </ul>
                         <br />
-                        <p>Outside all that, you can find me crafting up a new stageplay, half-marathon training, playing soccer or exploring local parks.</p>
+                        <p>Outside all that, you can find me crafting up a new stageplay, exploring local parks, dilly dallying, frolicking, etc.</p>
                             <div className="flex items-center justify-start space-x-5 mt-4">
                             <a href="https://github.com/jappun" target="_blank" rel="noopener noreferrer" className="items-center justify-between">
                                 <svg className="w-12 h-12 text-primary hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
