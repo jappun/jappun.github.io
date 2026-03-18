@@ -7,26 +7,26 @@ import portfolio from "../img/portfolio.png"
 import gather from "../img/gather.png"
 import busbuddies from "../img/busbuddies.png"
 import aiblocker from "../img/aiblocker.png"
+import storywizard from "../img/storywizard.png"
 
 
 export const projects = [
-  {
-    title: "should i ai?",
-    tech: ["HTML", "CSS", "JavaScript"],
-    description:
-    "Chrome extension that temporarily blocks AI tools for a user-set time period to motivate intentional AI usage and prevent overreliance.",
-    img: aiblocker,
-      github: "https://github.com/jappun/ai-blocker",
-      live: "https://chromewebstore.google.com/detail/should-i-ai/heakodlbffjmkafelmngkbdniebdboml"
-
-  },
-  {
+    {
     title: "Gather",
     tech: ["Next.js", "React", "Tailwind CSS", "Supabase"],
     description:
-    "Full-stack event planning web app where you can host events, invite friends, assign tasks, and splits expenses.",
+    "Full-stack event planning web app where users can host events, invite friends, assign tasks, and splits expenses.",
     img: gather,
       github: "https://github.com/jappun/gather",
+
+    },
+    {
+    title: "StoryWizard AI",
+    tech: ["Python", "FastAPI", "Gemini API", "Vite", "React", "Tailwind CSS"],
+    description:
+    "AI-powered full-stack web application that guides primary students through basic plot structure and generates a personalized story.",
+    img: storywizard,
+      github: "https://github.com/jappun/storywizard-ai",
 
   },
   {
@@ -70,6 +70,17 @@ export const projects = [
       img: dictionary,
       github: "https://github.com/jappun/dict-chrome"
   },
+      {
+    title: "should i ai?",
+    tech: ["HTML", "CSS", "JavaScript"],
+    description:
+    "Chrome extension that temporarily blocks AI tools for a user-set time period to motivate intentional AI usage and prevent overreliance.",
+    img: aiblocker,
+      github: "https://github.com/jappun/ai-blocker",
+      live: "https://chromewebstore.google.com/detail/should-i-ai/heakodlbffjmkafelmngkbdniebdboml"
+
+  },
+
   {
     title: "InsightUBC",
     tech: ["TypeScript", "JavaScript", "React", "Postman"],
@@ -85,6 +96,7 @@ export const projects = [
   //     img: portfolio,
   //     github: "https://github.com/jappun/jappun.github.io"
   // },
+
 ];
 
 export default projects;
