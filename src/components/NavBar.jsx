@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-const NavBar = ({homeRef, aboutRef, projectsRef}) => {
+const NavBar = ({ homeRef, aboutRef, experienceRef, projectsRef }) => {
 
     const goToHome = () => {
         homeRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -8,6 +8,10 @@ const NavBar = ({homeRef, aboutRef, projectsRef}) => {
     
       const goATobout = () => {
         aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+      };
+
+      const goToExperience = () => {
+        experienceRef.current.scrollIntoView({ behavior: 'smooth' });
       };
     
       const goToProjects = () => {
@@ -24,6 +28,9 @@ const NavBar = ({homeRef, aboutRef, projectsRef}) => {
             </button>
             <button className="hover:underline hover:text-white" onClick={goATobout}>
                 About
+            </button>
+            <button className="hover:underline hover:text-white" onClick={goToExperience}>
+                Experience
             </button>
             <button className="hover:underline hover:text-white" onClick={goToProjects}>
                 Projects

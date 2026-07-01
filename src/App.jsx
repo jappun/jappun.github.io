@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
+import Experience from './pages/Experience';
 import Projects from './pages/Projects';
 import NavBar from './components/NavBar';
 
@@ -40,6 +41,7 @@ const App = () => {
 
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
+  const experienceRef = useRef(null);
   const projectsRef = useRef(null);
 
 
@@ -49,17 +51,20 @@ const App = () => {
     <div id="container" className="fixed top-0 left-0 w-screen h-screen bg-darkblue overflow-hidden">
       {/* Content */}
       <div className="relative z-10 h-full overflow-y-auto">
-        <NavBar homeRef={homeRef} aboutRef={aboutRef} projectsRef={projectsRef} />
+        <NavBar homeRef={homeRef} aboutRef={aboutRef} experienceRef={experienceRef} projectsRef={projectsRef} />
         <section ref={homeRef}>
           <Home />
         </section>
         <section ref={aboutRef}>
           <About />
         </section>
+        <section ref={experienceRef}>
+          <Experience />
+        </section>
         <section ref={projectsRef}>
           <Projects />
         </section>
-        <div classNAme="w-full">
+        <div className="w-full">
           <p className="text-center text-primary">© 2025 Jappun Dhillon. All rights reserved.</p>
         </div>
 
