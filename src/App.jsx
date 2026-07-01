@@ -53,7 +53,7 @@ const App = () => {
       <div className="relative z-10 h-full overflow-y-auto">
         <NavBar homeRef={homeRef} aboutRef={aboutRef} experienceRef={experienceRef} projectsRef={projectsRef} />
         <section ref={homeRef}>
-          <Home />
+          <Home aboutRef={aboutRef} />
         </section>
         <section ref={aboutRef}>
           <About />
