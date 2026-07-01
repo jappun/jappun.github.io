@@ -2,6 +2,32 @@ import { cn } from "../utils/cn";
 
 const LOGO_BOX = "w-[4.75rem] h-[4.75rem] md:w-[5.25rem] md:h-[5.25rem]";
 
+const LINK_CLASS = "underline rounded-sm hover:text-lighterSky hover:bg-primary p-1";
+
+const renderBullet = (bullet) => {
+  if (typeof bullet === "string") return bullet;
+
+  return (
+    <>
+      {bullet.prefix}
+      {bullet.links.map((link, index) => (
+        <span key={link.href}>
+          {index > 0 && (bullet.join ?? " or ")}
+          <a
+            className={LINK_CLASS}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {link.label}
+          </a>
+        </span>
+      ))}
+      {bullet.suffix}
+    </>
+  );
+};
+
 const CompanyLogo = ({ logo, company, logoFit = "cover", logoScale = 1, logoPadding = "" }) => {
   if (logo) {
     return (
@@ -88,7 +114,7 @@ const ExperienceEntry = ({ experience, isLast }) => {
 
         <ul className="mt-4 space-y-2 list-disc list-outside pl-5 text-primary font-mont text-base leading-relaxed">
           {bullets.map((bullet, index) => (
-            <li key={index}>{bullet}</li>
+            <li key={index}>{renderBullet(bullet)}</li>
           ))}
         </ul>
 

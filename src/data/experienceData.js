@@ -16,7 +16,16 @@ export const experiences = [
     logoScale: 1.08,
     logoPadding: "p-1",
     bullets: [
-      "Second author on a paper accepted to ACM WebSci 2026; shared first authorship on a poster at COLM 2025.",
+      {
+        prefix: "Second author on a",
+        links: [
+          {
+            label: "paper accepted to ACM WebSci 2026",
+            href: "https://www.cs.toronto.edu/~fsamir/punishment_bureau.pdf",
+          }
+        ],
+        suffix: "and shared first authorship on a poster at COLM 2025."
+      },
       "Built a GPT-4o prompting pipeline for entity recognition and a Playwright scraping pipeline for 4,000+ articles with automated error recovery.",
     ],
     tech: ["Python", "OpenAI", "scikit-learn", "BeautifulSoup", "Playwright", "Next.js"],

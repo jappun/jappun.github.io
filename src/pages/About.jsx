@@ -13,14 +13,13 @@ const About = () => {
                         <p>What I'm up to right now:</p>
                         <br/>
                         <ul className="list-disc list-outside pl-6">
-                            <li>Wrapping up my Computer Science and English Literature degree at the University of British Columbia. Figuring out what life will look like after May.</li>
-                            <li>Analyzing Canadian news media with the <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://nlp.cs.ubc.ca/">UBC NLP Group</a> - checkout our
-                            <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://www.cs.toronto.edu/~fsamir/punishment_bureau.pdf">paper</a> or
-                            <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" href="https://www.cs.toronto.edu/~fsamir/police-coverage-analysis.html">blog post</a></li>
-                            <li>Building web apps for technical depth and making bad art for soulful depth</li>
+                            <li>Just graduated from UBC where I majored in Computer Science and English Literature</li>
+                            <li>Looking for SWE roles in the USA with an August start</li>
+                            <li>Building web apps for technical depth and making art for soulful depth</li>
+                            <li>Sharing my work to my <span className="line-through">Twitter</span> X profile: <a className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1" target="_blank" rel="noopener noreferrer" href="https://x.com/itsjappun">@itsjappun</a></li>
                         </ul>
                         <br />
-                        <p>Outside all that, you can find me crafting up a new stageplay, exploring local parks, dilly dallying, frolicking, etc.</p>
+                        <p>Outside all that, you can find me dilly dallying, frolicking, etc.</p>
                             <div className="flex items-center justify-start space-x-5 mt-4">
                             <a href="https://github.com/jappun" target="_blank" rel="noopener noreferrer" className="items-center justify-between">
                                 <svg className="w-12 h-12 text-primary hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
