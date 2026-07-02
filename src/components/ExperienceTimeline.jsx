@@ -87,7 +87,7 @@ const ExperienceEntry = ({ experience, isLast }) => {
 
       <div
         className={cn(
-          "flex-1 bg-lighterSky bg-opacity-70 rounded-2xl p-5 md:p-6",
+          "flex-1 bg-lighterSky bg-opacity-70 rounded-2xl p-6 md:p-8",
           !isLast && "mb-8"
         )}
       >
@@ -112,7 +112,7 @@ const ExperienceEntry = ({ experience, isLast }) => {
           </div>
         </div>
 
-        <ul className="mt-4 space-y-2 list-disc list-outside pl-5 text-primary font-mont text-base leading-relaxed">
+        <ul className="mt-4 space-y-2 list-disc list-outside pl-5 text-primary font-mont text-base md:text-[1.05rem] leading-relaxed">
           {bullets.map((bullet, index) => (
             <li key={index}>{renderBullet(bullet)}</li>
           ))}
@@ -135,7 +135,7 @@ const ExperienceEntry = ({ experience, isLast }) => {
 
 export const ExperienceTimeline = ({ items, className }) => {
   return (
-    <div className={cn("py-10", className)}>
+    <div className={cn("py-6 md:py-8", className)}>
       {items.map((experience, index) => (
         <ExperienceEntry
           key={experience.id}
