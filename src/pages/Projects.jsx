@@ -1,21 +1,29 @@
-import { ProjectCard } from "../components/ProjectCard"
-import { projects } from "../data/projectData";
-
-
+import { ProjectCard } from "../components/ProjectCard";
+import { Section } from "../components/Section";
+import { featuredProjects, otherProjects } from "../data/projectData";
 
 const Projects = () => {
-    return (
-    
-    <div className="min-h-screen">
-    <div className="flex flex-col items-center justify-center text-primary font-mont w-full text-3xl font-bold text-center">
-            Projects
-    </div>
-    <div className="max-w-7xl mx-auto px-8">
-      <ProjectCard items={projects} />
-    </div>
-    </div>
+  return (
+    <Section title="Projects" maxWidth="full">
+      <h3 className="text-primary font-mont text-xl font-semibold mb-1">
+        Featured
+      </h3>
+      <ProjectCard
+        items={featuredProjects}
+        variant="featured"
+        layoutIdPrefix="featured"
+      />
 
-    
-);
+      <h3 className="text-primary font-mont text-xl font-semibold mt-6 mb-1">
+        All Projects
+      </h3>
+      <ProjectCard
+        items={otherProjects}
+        variant="default"
+        layoutIdPrefix="all"
+      />
+    </Section>
+  );
 };
+
 export default Projects;
