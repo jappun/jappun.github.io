@@ -2,8 +2,24 @@ import ubcLogo from "../img/ubc-logo.svg";
 import abcFitnessLogo from "../img/abc-fitness.jpeg";
 import bathroomAppLogo from "../img/bathroom-app-logo.jpeg";
 import geeringUpLogo from "../img/geering-up-square.png";
+import pieLineLogo from "../img/pieline.jpeg";
 
 export const experiences = [
+  {
+    id: "pieline",
+    company: "PieLine",
+    role: "Software Engineer Intern",
+    startDate: "Aug 2026",
+    endDate: "Present",
+    location: "Remote",
+    logo: pieLineLogo,
+    logoFit: "cover",
+    bullets: [
+      "Owned the analytics system end-to-end: built an LLM-powered pipeline to extract structured data from call transcripts, and replaced a single-page view with a 4-tab dashboard.",
+      "Personalized caller experience by introducing customer memory and customizable agent greetings per restaurant.",
+    ],
+    tech: ["JavaScript", "React", "Next.js", "Supabase"],
+  },
   {
     id: "ubc-nlp",
     company: "UBC Natural Language Processing",
@@ -20,8 +36,8 @@ export const experiences = [
         prefix: "Second author on a",
         links: [
           {
-            label: "paper accepted to ACM WebSci 2026",
-            href: "https://www.cs.toronto.edu/~fsamir/punishment_bureau.pdf",
+            label: "paper presented at ACM WebSci 2026",
+            href: "https://dl.acm.org/doi/10.1145/3795766.3799754",
           }
         ],
         suffix: "and shared first authorship on a poster at COLM 2025."

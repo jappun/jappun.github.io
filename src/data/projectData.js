@@ -49,49 +49,9 @@ export const projects = [
     featured: false,
     tech: ["Next.js", "React", "Tailwind CSS", "Supabase", "Figma"],
     description:
-      "Matching platform for UBC students to find study buddies on their daily commute. Users with UBC student emails can create a profile, search for matches, and chat with potential buddies.",
+      "Matching platform for UBC students to find study buddies on their daily commute. Users with UBC student emails can create a profile, search for matches, and chat with potential buddies. Built in 24 hours at UBC's youCode hackathon.",
     img: busbuddies,
     github: "https://github.com/joy1234567891/BusBuddies",
-  },
-  {
-    id: "workout-journal",
-    title: "Workout Journal",
-    featured: false,
-    tech: ["Java", "JSON", "JUnit"],
-    description:
-      "Java GUI where users can track their workouts. Complete with data persistence.",
-    img: workoutjournal,
-    github: "https://github.com/jappun/workout-journal",
-  },
-  {
-    id: "hervision",
-    title: "HerVision",
-    featured: false,
-    tech: ["Swift", "xCode"],
-    description:
-      "HerVision is an iOS application that creates a personalized and social e-commerce experience for Aritzia customers. Users can search Aritzia's inventory, add items to their digital wardrobe, and upload images of their outfits to a community explore page.",
-    img: hervision,
-    github: "https://github.com/jappun/her-vision",
-  },
-  {
-    id: "community-db",
-    title: "Community Centre Database",
-    featured: false,
-    tech: ["SQL", "PHP", "Figma"],
-    description:
-      "Web-based database application that simulates a community centre management system. Authorized administrators can access and maintain data regarding facilities, equipment, customers and employees.",
-    img: erdiagram,
-    github: "https://github.com/jappun/community-db",
-  },
-  {
-    id: "lexilog",
-    title: "LexiLog",
-    featured: false,
-    tech: ["HTML", "CSS", "JavaScript", "Wordnik API"],
-    description:
-      "Powered by the Wordnik API, LexiLog is a personal dictionary Chrome Extension. Users can search and save words with their preferred definition and any personal notes.",
-    img: dictionary,
-    github: "https://github.com/jappun/dict-chrome",
   },
   {
     id: "should-i-ai",
@@ -105,14 +65,54 @@ export const projects = [
     live: "https://chromewebstore.google.com/detail/should-i-ai/heakodlbffjmkafelmngkbdniebdboml",
   },
   {
-    id: "insightubc",
-    title: "InsightUBC",
+    id: "hervision",
+    title: "HerVision",
     featured: false,
-    tech: ["TypeScript", "JavaScript", "React", "Postman"],
+    tech: ["Swift", "xCode"],
     description:
-      "Fullstack web application where users can filter through historical UBC course data. This was built for a UBC course, so I cannot share the code. Demo video coming soon!",
-    img: insightubc,
+      "iOS application that creates a personalized and social e-commerce experience for Aritzia customers. Users can search Aritzia's inventory, add items to their digital wardrobe, and upload images of their outfits to a community explore page. Built in 24 hours at UBC's girlCode hackathon.",
+    img: hervision,
+    github: "https://github.com/jappun/her-vision",
   },
+  {
+    id: "lexilog",
+    title: "LexiLog",
+    featured: false,
+    tech: ["HTML", "CSS", "JavaScript", "Wordnik API"],
+    description:
+      "Powered by the Wordnik API, LexiLog is a personal dictionary Chrome Extension. Users can search and save words with their preferred definition and any personal notes.",
+    img: dictionary,
+    github: "https://github.com/jappun/dict-chrome",
+  },
+  {
+    id: "community-db",
+    title: "Community Centre Database",
+    featured: false,
+    tech: ["SQL", "PHP", "Figma"],
+    description:
+      "Web-based database application that simulates a community centre management system. Authorized administrators can access and maintain data regarding facilities, equipment, customers and employees.",
+    img: erdiagram,
+    github: "https://github.com/jappun/community-db",
+  },
+  {
+    id: "workout-journal",
+    title: "Workout Journal",
+    featured: false,
+    tech: ["Java", "JSON", "JUnit"],
+    description:
+      "Java GUI where users can track their workouts. Complete with data persistence.",
+    img: workoutjournal,
+    github: "https://github.com/jappun/workout-journal",
+  },
+  // {
+  //   id: "insightubc",
+  //   title: "InsightUBC",
+  //   featured: false,
+  //   tech: ["TypeScript", "JavaScript", "React", "Postman"],
+  //   description:
+  //     "Fullstack web application where users can filter through historical UBC course data. This was built for a UBC course, so I cannot share the code. Demo video coming soon!",
+  //   img: insightubc,
+  // },
 ];
 
 export const featuredProjects = projects.filter((project) => project.featured);

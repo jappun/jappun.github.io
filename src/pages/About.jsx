@@ -25,12 +25,14 @@ const About = () => {
               Just graduated from UBC where I majored in Computer Science and
               English Literature
             </li>
-            <li>Looking for SWE roles in the USA with an August start</li>
             <li>
-              Building web apps for technical depth and making art for soulful
-              depth
+            Currently a SWE intern at <a href="https://getpieline.com" target="_blank" rel="noopener noreferrer" className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1">PieLine</a>, building voice AI for restaurants</li>   
+            <li>
+              Building software for technical depth and making art for soulful depth
             </li>
-            <li>
+            <li>Looking for a full-time role at a startup where my title doesn't limit what I get to work on</li>
+
+            {/* <li>
               Sharing my work to my <span className="line-through">Twitter</span>{" "}
               X profile:{" "}
               <a
@@ -41,12 +43,13 @@ const About = () => {
               >
                 @itsjappun
               </a>
-            </li>
+            </li> */}
           </ul>
           <br />
           <p>Outside all that, you can find me dilly dallying, frolicking, etc.</p>
+          <br/>
           <p className="mt-4">
-            Feel free to reach me at{" "}
+            Feel free to reach out:{" "}
             <a
               className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1"
               href="mailto:jappun.dev@gmail.com"
