@@ -1,75 +1,39 @@
-import React, { useEffect, useRef } from 'react';
-import Home from './pages/Home';
-import About from './pages/About';
-import Experience from './pages/Experience';
-import Projects from './pages/Projects';
-import NavBar from './components/NavBar';
+import { lazy, Suspense, useEffect } from "react";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import Portfolio from "./pages/Portfolio";
 
+const LegacyApp = lazy(() => import("./v1/App.jsx"));
 
+const Favicon = () => {
+  const { pathname } = useLocation();
 
+  useEffect(() => {
+    const link = document.querySelector("link[rel='icon']");
+    if (!link) return;
+    const legacy = pathname.startsWith("/v1");
+    link.href = legacy ? "/favicon.ico" : "/favicon-v2.png";
+    link.type = legacy ? "image/x-icon" : "image/png";
+  }, [pathname]);
 
-const generateRandomPercent = (min = 0, max = 100) => {
-  const randomInteger = Math.floor(Math.random() * (max + 1));
-  return `${randomInteger}%`;
+  return null;
 };
-
-const generateRandomDelay = (interval = 3) => {
-  const randomInteger = Math.random() * (interval + 1);
-  return `${randomInteger}s`;
-};
-
-const createStar = () => {
-  const star = document.createElement('div');
-  star.classList.add('star');
-  star.style.top = generateRandomPercent();
-  star.style.left = generateRandomPercent();
-  star.style.animationDelay = generateRandomDelay();
-  return star;
-};
-
-const renderStars = (amount = 30) => {
-  const container = document.getElementById('container');
-  const starsArray = Array(amount).fill().map(() => createStar());
-  container.append(...starsArray);
-};
-
 
 const App = () => {
-  useEffect(() => {
-    renderStars();
-  }, []);
-
-  const homeRef = useRef(null);
-  const aboutRef = useRef(null);
-  const experienceRef = useRef(null);
-  const projectsRef = useRef(null);
-
-
-
   return (
-    // Stars
-    <div id="container" className="fixed top-0 left-0 w-screen h-screen bg-darkblue overflow-hidden">
-      {/* Content */}
-      <div className="relative z-10 h-full overflow-y-auto">
-        <NavBar homeRef={homeRef} aboutRef={aboutRef} experienceRef={experienceRef} projectsRef={projectsRef} />
-        <section ref={homeRef}>
-          <Home aboutRef={aboutRef} />
-        </section>
-        <section ref={aboutRef}>
-          <About />
-        </section>
-        <section ref={experienceRef}>
-          <Experience />
-        </section>
-        <section ref={projectsRef}>
-          <Projects />
-        </section>
-        <div className="w-full">
-          <p className="text-center text-primary">© 2025 Jappun Dhillon. All rights reserved.</p>
-        </div>
-
-      </div>
-    </div>
+    <BrowserRouter>
+      <Favicon />
+      <Routes>
+        <Route path="/" element={<Portfolio />} />
+        <Route
+          path="/v1"
+          element={
+            <Suspense fallback={null}>
+              <LegacyApp />
+            </Suspense>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

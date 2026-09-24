@@ -1,147 +1,98 @@
 import { cn } from "../utils/cn";
+import { PaperTapes, experienceTapes, logoTapes } from "./Tape";
 
-const LOGO_BOX = "w-[4.75rem] h-[4.75rem] md:w-[5.25rem] md:h-[5.25rem]";
+const LINK_CLASS = "text-link";
 
-const LINK_CLASS = "underline rounded-sm hover:text-lighterSky hover:bg-primary p-1";
+const STRIP_COLORS = ["#f7f1e3", "#fbf6ea", "#f3ead7", "#f8f2e6", "#f4efe2"];
+const STRIP_ROTATIONS = [-0.7, 0.55, -0.35, 0.7, -0.45];
 
 const renderBullet = (bullet) => {
   if (typeof bullet === "string") return bullet;
 
   return (
     <>
-      {bullet.prefix}
+      {bullet.prefix}{" "}
       {bullet.links.map((link, index) => (
         <span key={link.href}>
           {index > 0 && (bullet.join ?? " or ")}
-          <a
-            className={LINK_CLASS}
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a className={LINK_CLASS} href={link.href} target="_blank" rel="noopener noreferrer">
             {link.label}
           </a>
         </span>
       ))}
-      {bullet.suffix}
+      {bullet.suffix ? ` ${bullet.suffix}` : null}
     </>
   );
 };
 
-const CompanyLogo = ({ logo, company, logoFit = "cover", logoScale = 1, logoPadding = "" }) => {
-  if (logo) {
-    return (
-      <div
-        className={cn(
-          LOGO_BOX,
-          "shrink-0 rounded-xl bg-white overflow-hidden"
-        )}
-      >
+const CompanyLogo = ({ logo, company, logoFit = "cover", logoScale = 1, logoPadding = "", tape }) => {
+  if (!logo) return null;
+
+  return (
+    <div className="relative shrink-0">
+      <span className="tape tape-sm" style={{ ...tape, width: "2.6rem" }} aria-hidden="true" />
+      <div className="h-16 w-16 overflow-hidden border border-black/15 bg-white md:h-[4.5rem] md:w-[4.5rem]">
         <img
           src={logo}
           alt={`${company} logo`}
-          className={cn(
-            "w-full h-full",
-            logoFit === "cover" ? "object-cover" : "object-contain",
-            logoPadding
-          )}
+          className={cn("h-full w-full", logoFit === "cover" ? "object-cover" : "object-contain", logoPadding)}
           style={logoScale !== 1 ? { transform: `scale(${logoScale})` } : undefined}
         />
       </div>
-    );
-  }
-
-  const initials = company
-    .split(" ")
-    .filter((word) => word.length > 0 && word[0] === word[0].toUpperCase())
-    .slice(0, 2)
-    .map((word) => word[0])
-    .join("");
-
-  return (
-    <div
-      className={cn(
-        LOGO_BOX,
-        "rounded-xl bg-primary/20 border border-primary/30 flex items-center justify-center shrink-0"
-      )}
-      aria-hidden="true"
-    >
-      <span className="text-primary font-mont font-bold text-base">
-        {initials || company[0]}
-      </span>
     </div>
   );
 };
 
-const ExperienceEntry = ({ experience, isLast }) => {
+const ExperienceEntry = ({ experience, index }) => {
   const { company, role, startDate, endDate, location, logo, logoFit, logoScale, logoPadding, bullets, tech } = experience;
 
   return (
-    <div className="relative flex gap-6 md:gap-8">
-      <div className="flex flex-col items-center shrink-0 w-4">
-        <div className="w-3 h-3 rounded-full bg-primary ring-4 ring-primary/20 mt-2 z-10" />
-        {!isLast && (
-          <div className="w-px flex-1 bg-primary/30 mt-2" aria-hidden="true" />
-        )}
-      </div>
-
-      <div
-        className={cn(
-          "flex-1 bg-lighterSky bg-opacity-70 rounded-2xl p-6 md:p-8",
-          !isLast && "mb-8"
-        )}
-      >
-        <div className="flex items-start gap-4 md:gap-5">
-          <CompanyLogo
-            logo={logo}
-            company={company}
-            logoFit={logoFit}
-            logoScale={logoScale}
-            logoPadding={logoPadding}
-          />
-          <div className="min-w-0">
-            <h3 className="text-primary font-mont font-bold text-xl md:text-2xl leading-tight">
-              {role}
-            </h3>
-            <p className="text-primary/80 font-mont font-medium text-base md:text-lg mt-1">
-              {company}
-            </p>
-            <p className="text-primary/70 font-mont text-sm mt-1 uppercase tracking-wide">
-              {startDate} – {endDate} · {location}
-            </p>
-          </div>
-        </div>
-
-        <ul className="mt-4 space-y-2 list-disc list-outside pl-5 text-primary font-mont text-base md:text-[1.05rem] leading-relaxed">
-          {bullets.map((bullet, index) => (
-            <li key={index}>{renderBullet(bullet)}</li>
-          ))}
-        </ul>
-
-        <div className="flex flex-wrap mt-4 gap-2">
-          {tech.map((item, index) => (
-            <span
-              key={index}
-              className="bg-primary text-sky rounded-md px-2 py-1 text-xs font-mont"
-            >
-              {item}
-            </span>
-          ))}
+    <article
+      className="paper-strip relative mb-7 px-4 py-5 md:px-6 md:py-6"
+      style={{
+        backgroundColor: STRIP_COLORS[index % STRIP_COLORS.length],
+        transform: `rotate(${STRIP_ROTATIONS[index % STRIP_ROTATIONS.length]}deg)`,
+      }}
+    >
+      <PaperTapes layout={experienceTapes[index % experienceTapes.length]} />
+      <div className="flex items-start gap-4">
+        <CompanyLogo
+          logo={logo}
+          company={company}
+          logoFit={logoFit}
+          logoScale={logoScale}
+          logoPadding={logoPadding}
+          tape={logoTapes[index % logoTapes.length]}
+        />
+        <div className="min-w-0">
+          <h3 className="text-xl leading-tight md:text-2xl">{role}</h3>
+          <p className="mt-1 text-base md:text-lg">{company}</p>
+          <p className="mt-1 text-sm">
+            {startDate} – {endDate} · {location}
+          </p>
         </div>
       </div>
-    </div>
+      <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-relaxed">
+        {bullets.map((bullet, bulletIndex) => (
+          <li key={bulletIndex}>{renderBullet(bullet)}</li>
+        ))}
+      </ul>
+      <div className="mt-4 flex flex-wrap gap-2">
+        {tech.map((item) => (
+          <span key={item} className="bg-[#fff3a1] px-1 text-sm">
+            {item}
+          </span>
+        ))}
+      </div>
+    </article>
   );
 };
 
 export const ExperienceTimeline = ({ items, className }) => {
   return (
-    <div className={cn("py-6 md:py-8", className)}>
+    <div className={cn("relative py-2", className)}>
       {items.map((experience, index) => (
-        <ExperienceEntry
-          key={experience.id}
-          experience={experience}
-          isLast={index === items.length - 1}
-        />
+        <ExperienceEntry key={experience.id} experience={experience} index={index} />
       ))}
     </div>
   );

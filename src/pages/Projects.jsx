@@ -1,28 +1,19 @@
-import { ProjectCard } from "../components/ProjectCard";
+import { RuledProjects, StickyNotes } from "../components/ProjectCard";
 import { Section } from "../components/Section";
 import { featuredProjects, otherProjects } from "../data/projectData";
+import projectsTitle from "../img/sections/projects-ink.png";
+import allProjectsTitle from "../img/sections/all-projects-ink.png";
 
 const Projects = () => {
   return (
-    <Section title="Projects" maxWidth="full">
-      <h3 className="text-primary font-mont text-xl font-semibold mb-1">
-        Featured
-      </h3>
-      <ProjectCard
-        items={featuredProjects}
-        variant="featured"
-        layoutIdPrefix="featured"
-      />
-
-      <h3 className="text-primary font-mont text-xl font-semibold mt-6 mb-1">
-        All Projects
-      </h3>
-      <ProjectCard
-        items={otherProjects}
-        variant="default"
-        layoutIdPrefix="all"
-      />
-    </Section>
+    <>
+      <Section titleSrc={projectsTitle} titleAlt="Projects" rotate={-0.8}>
+        <StickyNotes items={featuredProjects} />
+      </Section>
+      <Section titleSrc={allProjectsTitle} titleAlt="All Projects" rotate={0.7}>
+        <RuledProjects items={otherProjects} />
+      </Section>
+    </>
   );
 };
 

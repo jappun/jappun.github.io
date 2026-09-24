@@ -1,8 +1,8 @@
-import ubcLogo from "../img/ubc-logo.svg";
-import abcFitnessLogo from "../img/abc-fitness.jpeg";
-import bathroomAppLogo from "../img/bathroom-app-logo.jpeg";
-import geeringUpLogo from "../img/geering-up-square.png";
-import pieLineLogo from "../img/pieline.jpeg";
+import ubcLogo from "../img/experience/ubc-logo.svg";
+import abcFitnessLogo from "../img/experience/abc-fitness.jpeg";
+import bathroomAppLogo from "../img/experience/bathroom-app-logo.jpeg";
+import geeringUpLogo from "../img/experience/geering-up-square.png";
+import pieLineLogo from "../img/experience/pieline.jpeg";
 
 export const experiences = [
   {

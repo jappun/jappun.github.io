@@ -1,142 +1,108 @@
-import { cn } from "../utils/cn";
-import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { cn } from "../utils/cn";
+import { PaperTapes, allProjectsTapes } from "./Tape";
 
-const gridVariants = {
-  featured: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4",
-  default: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4",
-};
+const ROTATIONS = [-2.2, 1.6, -1.1, 2, -1.6, 0.8];
 
-export const ProjectCard = ({ items, className, variant = "default", layoutIdPrefix = "project" }) => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+const ProjectLinks = ({ github, live }) => (
+  <div className="mt-3 flex gap-3 text-sm">
+    {github && (
+      <a className="text-link" href={github} target="_blank" rel="noopener noreferrer">
+        code
+      </a>
+    )}
+    {live && (
+      <a className="text-link" href={live} target="_blank" rel="noopener noreferrer">
+        live
+      </a>
+    )}
+  </div>
+);
+
+const StickyNote = ({ item, index }) => {
+  const [flipped, setFlipped] = useState(false);
+
+  const toggle = (event) => {
+    if (event.target.closest("a")) return;
+    setFlipped((open) => !open);
+  };
 
   return (
-    <div className={cn("grid py-4", gridVariants[variant], className)}>
-      {items.map((item, idx) => (
-        <div
-          key={item.id ?? idx}
-          className="relative group block p-2 h-full w-full"
-          onMouseEnter={() => setHoveredIndex(idx)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          <AnimatePresence>
-            {hoveredIndex === idx && (
-              <motion.span
-                className="absolute inset-0 h-full w-full bg-primary block rounded-3xl"
-                layoutId={`${layoutIdPrefix}-hover-${item.id ?? idx}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.0 }}
-              />
+    <div
+      className={cn("sticky", flipped && "is-flipped")}
+      style={{ "--tilt": `${ROTATIONS[index % ROTATIONS.length]}deg` }}
+    >
+      <div
+        className="sticky-inner cursor-pointer"
+        onClick={toggle}
+      >
+        <div className="sticky-face px-3 pb-4 pt-3">
+          <h3 className="mb-2 text-center text-xl leading-tight">{item.title}</h3>
+          <img
+            src={item.imgV2 ?? item.img}
+            alt=""
+            className={cn(
+              "aspect-square w-full",
+              item.imageFit === "object-contain" ? "bg-[#f4efe4] object-contain" : "object-cover"
             )}
-          </AnimatePresence>
-          <Card>
-            <CardTitle title={item.title} github={item.github} live={item.live} />
-            <CardImage
-              isHovered={hoveredIndex === idx}
-              description={item.description}
-              img={item.img}
-              previewBg={item.previewBg}
-              imageFit={item.imageFit}
-            />
-            <CardTechStack tech={item.tech} />
-          </Card>
+          />
         </div>
+        <div className="sticky-face sticky-back px-4 py-4 text-left">
+          <h3 className="text-lg leading-tight">{item.title}</h3>
+          <p className="mt-2 text-sm leading-snug">{item.description}</p>
+          <div className="mt-3 flex flex-wrap gap-1">
+            {item.tech.map((tech) => (
+              <span key={tech} className="bg-[#fff3a1] px-1 text-sm">
+                {tech}
+              </span>
+            ))}
+          </div>
+          <ProjectLinks github={item.github} live={item.live} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const StickyNotes = ({ items }) => {
+  return (
+    <div className="flex flex-wrap items-start justify-center gap-6 py-2 md:gap-8">
+      {items.map((item, index) => (
+        <StickyNote key={item.id} item={item} index={index} />
       ))}
     </div>
   );
 };
 
-export const Card = ({ className, children }) => {
+export const RuledProjects = ({ items }) => {
   return (
-    <div
-      className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-lighterSky bg-opacity-70 hover:bg-opacity-100 border border-transparent group-hover:border-slate-700 relative z-20",
-        className
-      )}
-    >
-      <div className="relative z-50">
-        <div className="p-2">{children}</div>
-      </div>
-    </div>
-  );
-};
-
-export const CardTitle = ({ className, title, github, live }) => {
-  return (
-    <div className="flex justify-between items-start">
-      <h4 className={cn("text-primary font-mont text-lg font-bold tracking-wide mr-2", className)}>
-        {title}
-      </h4>
-      <div className="flex gap-2">
-        {github && (
-          <a href={github} target="_blank" rel="noopener noreferrer">
-            <svg
-              className="w-8 h-8 text-primary hover:text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fillRule="evenodd"
-                d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.393 6.17 10.48 10.48 0 0 0 1.317 6.955 10.045 10.045 0 0 0 5.4 4.418c.504.095.683-.223.683-.494 0-.245-.01-1.052-.014-1.908-2.78.62-3.366-1.21-3.366-1.21a2.711 2.711 0 0 0-1.11-1.5c-.907-.637.07-.621.07-.621.317.044.62.163.885.346.266.183.487.426.647.71.135.253.318.476.538.655a2.079 2.079 0 0 0 2.37.196c.045-.52.27-1.006.635-1.37-2.219-.259-4.554-1.138-4.554-5.07a4.022 4.022 0 0 1 1.031-2.75 3.77 3.77 0 0 1 .096-2.713s.839-.275 2.749 1.05a9.26 9.26 0 0 1 5.004 0c1.906-1.325 2.74-1.05 2.74-1.05.37.858.406 1.828.101 2.713a4.017 4.017 0 0 1 1.029 2.75c0 3.939-2.339 4.805-4.564 5.058a2.471 2.471 0 0 1 .679 1.897c0 1.372-.012 2.477-.012 2.814 0 .272.18.592.687.492a10.05 10.05 0 0 0 5.388-4.421 10.473 10.473 0 0 0 1.313-6.948 10.32 10.32 0 0 0-3.39-6.165A9.847 9.847 0 0 0 12.007 2Z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </a>
-        )}
-        {live && (
-          <a href={live} target="_blank" rel="noopener noreferrer">
-            <svg
-              className="h-8 w-8 stroke-primary hover:stroke-white fill-none"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5 12V6C5 5.44772 5.44772 5 6 5H18C18.5523 5 19 5.44772 19 6V18C19 18.5523 18.5523 19 18 19H12M8.11111 12H12M12 12V15.8889M12 12L5 19"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export const CardImage = ({ isHovered, description, img, previewBg, imageFit = "object-cover" }) => {
-  return (
-    <div
-      className={cn(
-        "relative flex-1 flex self-end w-full aspect-square rounded-md overflow-hidden mt-4 transition-all duration-300",
-        previewBg ?? "bg-primary"
-      )}
-    >
-      <img
-        src={img}
-        alt="Project preview"
-        className={cn("w-full h-full", imageFit, isHovered && "blur")}
-      />
-      <p
-        className={`absolute inset-0 block p-4 bg-black bg-opacity-50 text-white tracking-wide leading-relaxed text-sm md:text-lg transition-opacity duration-300 ${
-          isHovered ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        {description}
-      </p>
-    </div>
-  );
-};
-
-export const CardTechStack = ({ tech }) => {
-  return (
-    <div className="flex flex-wrap mt-4 gap-2">
-      {tech.map((item, index) => (
-        <div key={index} className="bg-primary text-sky rounded-md p-1 text-sm">
-          {item}
+    <div className="ruled text-base md:text-lg">
+      <PaperTapes layout={allProjectsTapes} size="tape-lg" />
+      <div className="ruled-row">&nbsp;</div>
+      {items.map((item, index) => (
+        <div key={item.id}>
+          <div className="ruled-row flex items-start justify-between gap-3">
+            <span className="ruled-title min-w-0">{item.title}</span>
+            <span className="shrink-0 whitespace-nowrap">
+              {item.github && (
+                <a className="text-link" href={item.github} target="_blank" rel="noopener noreferrer">
+                  code
+                </a>
+              )}
+              {item.live && (
+                <a
+                  className="text-link ml-3"
+                  href={item.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  live
+                </a>
+              )}
+            </span>
+          </div>
+          <p className="ruled-row">• {item.description}</p>
+          {index < items.length - 1 && <div className="ruled-row">&nbsp;</div>}
         </div>
       ))}
     </div>

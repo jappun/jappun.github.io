@@ -13,6 +13,7 @@ export default {
       },
       fontFamily: {
         'mont': ['Montserrat', 'sans-serif'],
+        'type': ['Cutive', 'serif'],
       },
     }
   },

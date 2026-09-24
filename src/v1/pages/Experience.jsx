@@ -1,11 +1,10 @@
 import { ExperienceTimeline } from "../components/ExperienceTimeline";
 import { Section } from "../components/Section";
-import { experiences } from "../data/experienceData";
-import experienceTitle from "../img/sections/experience-ink.png";
+import { experiences } from "../../data/experienceData";
 
 const Experience = () => {
   return (
-    <Section titleSrc={experienceTitle} titleAlt="Experience" rotate={1}>
+    <Section title="Experience" maxWidth="full">
       <ExperienceTimeline items={experiences} />
     </Section>
   );

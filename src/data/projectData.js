@@ -1,13 +1,16 @@
-import hervision from "../img/hervision.png";
-import workoutjournal from "../img/workoutjournal.png";
-import erdiagram from "../img/ER-diagram.png";
-import dictionary from "../img/dictionary.png";
-import insightubc from "../img/insightubc.png";
-import gather from "../img/gather.png";
-import busbuddies from "../img/busbuddies.png";
-import aiblocker from "../img/aiblocker.png";
-import storywizard from "../img/storywizard.png";
-import nytCrosswords from "../img/crossword.svg";
+import hervision from "../img/projects/hervision.png";
+import workoutjournal from "../img/projects/workoutjournal.png";
+import erdiagram from "../img/projects/ER-diagram.png";
+import dictionary from "../img/projects/dictionary.png";
+import insightubc from "../img/projects/insightubc.png";
+import gather from "../img/projects/gather.png";
+import gatherV2 from "../img/projects/gather-v2.png";
+import busbuddies from "../img/projects/busbuddies.png";
+import aiblocker from "../img/projects/aiblocker.png";
+import storywizard from "../img/projects/storywizard.png";
+import storywizardV2 from "../img/projects/storywizard-v2.png";
+import nytCrosswords from "../img/projects/crossword.svg";
+import nytCrosswordsV2 from "../img/projects/crossword-v2.png";
 
 export const projects = [
   {
@@ -18,6 +21,7 @@ export const projects = [
     description:
       "Scraped 30+ years of NYT daily, mini, and midi crosswords into a Streamlit dashboard for word frequency analysis, search, and per-puzzle rankings.",
     img: nytCrosswords,
+    imgV2: nytCrosswordsV2,
     previewBg: "bg-white",
     imageFit: "object-contain",
     github: "https://github.com/jappun/NYT-crosswords",
@@ -31,6 +35,7 @@ export const projects = [
     description:
       "Full-stack event planning web app where users can host events, invite friends, assign tasks, and split expenses.",
     img: gather,
+    imgV2: gatherV2,
     github: "https://github.com/jappun/gather",
   },
   {
@@ -41,6 +46,7 @@ export const projects = [
     description:
       "AI-powered full-stack web application that guides primary students through basic plot structure and generates a personalized story.",
     img: storywizard,
+    imgV2: storywizardV2,
     github: "https://github.com/jappun/storywizard-ai",
   },
   {
