@@ -26,8 +26,17 @@ const About = () => {
               English Literature
             </li>
             <li>
-            Currently a SWE intern at <a href="https://getpieline.com" target="_blank" rel="noopener noreferrer" className="underline rounded-sm hover:text-lighterSky hover:bg-primary p-1">PieLine</a>, building voice AI for restaurants</li>   
-            <li>
+                Building voice AI for restaurants at{" "}
+                <a
+                  href="https://getpieline.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-link"
+                >
+                  PieLine
+                </a>
+              </li>
+              <li>
               Building software for technical depth and making art for soulful depth
             </li>
             <li>Looking for a full-time role at a startup where my title doesn't limit what I get to work on</li>

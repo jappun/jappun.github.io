@@ -8,8 +8,8 @@ export const experiences = [
   {
     id: "pieline",
     company: "PieLine",
-    role: "Software Engineer Intern",
-    startDate: "Aug 2026",
+    role: "Software Engineer (Contract)",
+    startDate: "July 2026",
     endDate: "Present",
     location: "Remote",
     logo: pieLineLogo,
@@ -49,7 +49,7 @@ export const experiences = [
   {
     id: "abc-fitness",
     company: "ABC Fitness",
-    role: "Software Engineer Intern",
+    role: "Software Engineer (Contract)",
     startDate: "Jun 2025",
     endDate: "Aug 2025",
     location: "Remote",

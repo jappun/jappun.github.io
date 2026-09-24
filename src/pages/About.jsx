@@ -32,7 +32,7 @@ const About = () => {
                 English Literature
               </li>
               <li>
-                Currently a SWE intern at{" "}
+                Building voice AI for restaurants at{" "}
                 <a
                   href="https://getpieline.com"
                   target="_blank"
@@ -41,10 +41,9 @@ const About = () => {
                 >
                   PieLine
                 </a>
-                , building voice AI for restaurants
               </li>
               <li>
-                Building software for technical depth and making art for soulful depth
+                Writing all kinds of things: plays, short stories, notes app entries, etc.
               </li>
               <li>
                 Looking for a full-time role at a startup where my title doesn&apos;t limit what I get to work on
