@@ -58,7 +58,7 @@ const Home = ({ aboutRef }) => {
         <LetterRow letters={lastName} />
       </div>
       <p className="mt-6 max-w-2xl text-center text-lg sm:text-xl">
-        UBC New Grad | Software Developer | Researcher
+        UBC New Grad | Software Developer | Writer
       </p>
       <p className="mt-3 text-center text-base sm:text-lg">
         Open to US-based SWE roles

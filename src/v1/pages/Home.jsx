@@ -9,7 +9,7 @@ const Home = ({ aboutRef }) => {
         Jappun Dhillon
       </div>
       <p className="text-lg sm:text-xl text-center text-primary mt-4 max-w-2xl">
-        UBC New Grad | Software Developer | Researcher
+        UBC New Grad | Software Developer | Writer
       </p>
       <p className="text-base sm:text-lg text-center text-primary/80 mt-3">
         Open to US-based SWE roles
