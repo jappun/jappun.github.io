@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import Portfolio from "./pages/Portfolio";
 
 const LegacyApp = lazy(() => import("./v1/App.jsx"));
@@ -33,6 +34,7 @@ const App = () => {
           }
         />
       </Routes>
+      <Analytics />
     </BrowserRouter>
   );
 };
