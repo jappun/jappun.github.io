@@ -21,7 +21,7 @@ const About = () => {
           </div>
           <div className="w-full text-left text-lg leading-relaxed">
             <p className="text-xl">
-              Welcome to my little corner of the Internet. Happy to have you here.
+              Welcome to my little corner of the Internet. Great to have you here.
             </p>
             <br />
             <p>What I&apos;m up to right now:</p>
@@ -43,20 +43,20 @@ const About = () => {
                 </a>
               </li>
               <li>
-                Writing all kinds of things: plays, short stories, notes app entries, etc.
+                Looking for a full-time role at a startup where my title doesn&apos;t limit what I get to work on
               </li>
               <li>
-                Looking for a full-time role at a startup where my title doesn&apos;t limit what I get to work on
+                Writing all kinds of things: plays, short stories, notes app entries, etc.
               </li>
             </ul>
             <br />
             <p>Outside all that, you can find me dilly dallying, frolicking, etc.</p>
             <br />
             <p>
-              Feel free to reach out:{" "}
+              Feel free to reach out: {" "}
               <a className="text-link" href="mailto:jappun.dev@gmail.com">
                 jappun.dev@gmail.com
-              </a>
+              </a>, or <a className="text-link" target="_blank" href="https://calendly.com/jappun-dev/30min"> let's talk. </a>
             </p>
           </div>
         </div>

@@ -8,17 +8,16 @@ export const experiences = [
   {
     id: "pieline",
     company: "PieLine",
-    role: "Software Engineer (Contract)",
-    startDate: "July 2026",
+    role: "Software Engineer",
+    startDate: "June 2026",
     endDate: "Present",
-    location: "Remote",
+    location: "San Francisco, CA",
     logo: pieLineLogo,
     logoFit: "cover",
     bullets: [
-      "Owned the analytics system end-to-end: built an LLM-powered pipeline to extract structured data from call transcripts, and replaced a single-page view with a 4-tab dashboard.",
-      "Personalized caller experience by introducing customer memory and customizable agent greetings per restaurant.",
+      "Working on a bit of everything, from the core product to customer-facing platform. I'm learning a bunch! :)",
     ],
-    tech: ["JavaScript", "React", "Next.js", "Supabase"],
+    tech: ["JavaScript", "React", "Next.js", "Supabase", "Vapi", "LiveKit"],
   },
   {
     id: "ubc-nlp",
@@ -49,7 +48,7 @@ export const experiences = [
   {
     id: "abc-fitness",
     company: "ABC Fitness",
-    role: "Software Engineer (Contract)",
+    role: "Software Engineer Intern",
     startDate: "Jun 2025",
     endDate: "Aug 2025",
     location: "Remote",
