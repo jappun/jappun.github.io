@@ -15,7 +15,7 @@ export const experiences = [
     logo: pieLineLogo,
     logoFit: "cover",
     bullets: [
-      "Working on a bit of everything, from the core product to customer-facing platform. I'm learning a bunch! :)",
+      "Working on a bit of everything: the core product, internal analytics, customer-facing platform. Learning a bunch! :)",
     ],
     tech: ["JavaScript", "React", "Next.js", "Supabase", "Vapi", "LiveKit"],
   },
@@ -55,8 +55,7 @@ export const experiences = [
     logo: abcFitnessLogo,
     logoFit: "cover",
     bullets: [
-      "Migrated legacy code to React with Redux and RxJS, ensuring feature parity through 100% Jest unit test coverage.",
-      "Identified a data sync bug affecting multiple product areas and designed a reusable solution adopted site-wide.",
+      "Brought down customer churn, migrated legacy codebase and resolved platform bugs.",
     ],
     tech: ["TypeScript", "JavaScript", "React", "Redux", "RxJS", "Jest"],
   },
@@ -71,7 +70,6 @@ export const experiences = [
     logoFit: "contain",
     logoPadding: "p-1",
     bullets: [
-      "Implemented secure Gmail authentication with OAuth 2.0, enabling 500+ user sign-ups.",
       "Built modular React components and redesigned core UI elements with responsive animations.",
     ],
     tech: ["JavaScript", "Next.js", "React", "Supabase", "OAuth 2.0", "Tailwind CSS"],
