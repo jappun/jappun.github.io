@@ -20,9 +20,8 @@ export const projects = [
     year: 2026,
     status: "in progress",
     tech: ["Python", "PySide6", "MIDI", "Anthropic / Open AI / Gemini APIs", "pytest"],
-    blurb: "Plays a beat, listens to your kit, grades your timing.",
     description:
-      "Desktop app that plays a drumbeat, listens to your electronic kit, and scores you.",
+      "Desktop app that plays a drumbeat, listens to your electronic kit, and scores your playing.",
     bullets: [
       "Reads drumkit input over USB and scores every hit, with latency calibration",
       "Supports a grid view and real notation view with the Bravura music font",
@@ -38,9 +37,8 @@ export const projects = [
     featured: true,
     year: 2026,
     tech: ["Python", "Streamlit", "Pandas", "Plotly"],
-    blurb: "Dashboard displaying 30+ years of NYT crossword data",
     description:
-      "Scraped 30+ years of NYT daily, mini, and midi crosswords into a Streamlit dashboard for word frequency analysis, search, and per-puzzle rankings.",
+      "Scraped 30+ years of NYT crossword data into a Streamlit dashboard for word frequency analysis, search, and per-puzzle rankings.",
     bullets: [
       "Scraped ~1M clue–answer rows from 11.9k Daily, 4.3k Mini and every Midi puzzle",
       "Per-100-puzzle rates so the new Midi isn't dwarfed by 30 years of Daily",
@@ -60,7 +58,6 @@ export const projects = [
     featured: true,
     year: 2025,
     tech: ["Next.js", "React", "Tailwind CSS", "Supabase"],
-    blurb: "Plan events with friends: invites, tasks, and split costs.",
     description:
       "Full-stack event planning web app where users can host events, invite friends, assign tasks, and split expenses.",
     bullets: [
@@ -78,7 +75,6 @@ export const projects = [
     featured: false,
     year: 2025,
     tech: ["Python", "FastAPI", "Gemini API", "Vite", "React", "Tailwind CSS"],
-    blurb: "Guides kids through plot structure, then writes their story.",
     description:
       "AI-powered full-stack web application that guides primary students through basic plot structure and generates a personalized story.",
     img: storywizard,
@@ -92,7 +88,6 @@ export const projects = [
     year: 2025,
     context: "youCode hackathon · 24h",
     tech: ["Next.js", "React", "Tailwind CSS", "Supabase", "Figma"],
-    blurb: "Matches UBC students with study buddies on their commute.",
     description:
       "Matching platform for UBC students to find study buddies on their daily commute. Users with UBC student emails can create a profile, search for matches, and chat with potential buddies. Built in 24 hours at UBC's youCode hackathon.",
     img: busbuddies,
@@ -104,7 +99,6 @@ export const projects = [
     featured: false,
     year: 2025,
     tech: ["HTML", "CSS", "JavaScript"],
-    blurb: "Chrome extension that blocks AI tools for a set time.",
     description:
       "Chrome extension that temporarily blocks AI tools for a user-set time period to motivate intentional AI usage and prevent overreliance.",
     img: aiblocker,
@@ -118,7 +112,6 @@ export const projects = [
     year: 2024,
     context: "girlCode hackathon · 24h",
     tech: ["Swift", "xCode"],
-    blurb: "iOS digital wardrobe and outfit feed for Aritzia shoppers.",
     description:
       "iOS application that creates a personalized and social e-commerce experience for Aritzia customers. Users can search Aritzia's inventory, add items to their digital wardrobe, and upload images of their outfits to a community explore page. Built in 24 hours at UBC's girlCode hackathon.",
     img: hervision,
@@ -130,7 +123,6 @@ export const projects = [
     featured: false,
     year: 2024,
     tech: ["HTML", "CSS", "JavaScript", "Wordnik API"],
-    blurb: "Personal dictionary Chrome extension with saved words and notes.",
     description:
       "Powered by the Wordnik API, LexiLog is a personal dictionary Chrome Extension. Users can search and save words with their preferred definition and any personal notes.",
     img: dictionary,
@@ -143,7 +135,6 @@ export const projects = [
     year: 2024,
     context: "UBC course project",
     tech: ["SQL", "PHP", "Figma"],
-    blurb: "Admin database app for running a community centre.",
     description:
       "Web-based database application that simulates a community centre management system. Authorized administrators can access and maintain data regarding facilities, equipment, customers and employees.",
     img: erdiagram,
@@ -156,7 +147,6 @@ export const projects = [
     year: 2023,
     context: "UBC course project",
     tech: ["Java", "JSON", "JUnit"],
-    blurb: "Java desktop app for logging workouts.",
     description:
       "Java GUI where users can track their workouts. Complete with data persistence.",
     img: workoutjournal,

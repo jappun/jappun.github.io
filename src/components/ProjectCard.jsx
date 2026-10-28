@@ -51,7 +51,7 @@ const IndexCard = ({ item, index, onOpen }) => (
   >
     <CardHeader item={item} />
     <div className="index-card-lines">
-      <p className="line-clamp-2 h-[calc(var(--rule)*2)]">{item.blurb}</p>
+      <p className="line-clamp-5 h-[calc(var(--rule)*5)]">{item.description}</p>
       <p className="text-right">
         <span className="card-cta text-sm">more →</span>
       </p>
@@ -106,7 +106,7 @@ const ProjectDialog = ({ item, onClose }) => {
           </button>
         </CardHeader>
         <div className="index-card-lines index-card-lines-full">
-          <p className="mb-[var(--rule)]">{item.blurb}</p>
+          <p className="mb-[var(--rule)]">{item.description}</p>
           {item.bullets && (
             <ul className="list-disc pl-5">
               {item.bullets.map((bullet) => (
