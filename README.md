@@ -9,3 +9,5 @@
 
 ## Attributions
 The star background in V1 was adapted from [this animation](https://codepen.io/chriskschneider/pen/GgPeOe) by Chris Schneider.
+
+The letters in the *Learning to Iterate* title were generated at [ransomizer.com](https://ransomizer.com).

@@ -46,7 +46,7 @@ body,
 }
 
 .v2 .text-link:hover {
-  background-color: #ffe45c;
+  background-color: #f7b6ca;
 }
 
 .name-row img {
@@ -73,10 +73,11 @@ body,
   line-height: 0;
 }
 
+/* Every paper on the page is the same index-card yellow. */
 .sheet,
 .paper-strip,
 .ruled {
-  background-color: #f6f0e4;
+  background-color: #fcf3b0;
 }
 
 .sheet,
@@ -245,6 +246,164 @@ body,
   --marker: 0.85;
 }
 
+/* Little "Learning to Iterate" booklet tucked into the About sheet's bottom-right corner. */
+.iterate-cover {
+  position: absolute;
+  right: -0.75rem;
+  bottom: -3rem;
+  z-index: 3;
+  width: 8.5rem;
+  transform: rotate(6deg);
+  /* Swing from the pin. */
+  transform-origin: 50% 0.4rem;
+  transition: transform 0.3s ease;
+}
+
+.iterate-cover:hover,
+.iterate-cover:focus-visible {
+  transform: rotate(1deg);
+}
+
+/* Hang further off the corner once there's page margin to hang into. */
+@media (min-width: 1100px) {
+  .iterate-cover {
+    right: -2.5rem;
+  }
+}
+
+.iterate-cover-img {
+  width: 100%;
+  border-radius: 1px 3px 3px 1px;
+  /* Stacked page edges on the right, a drop shadow, then the (hidden) pink glow. */
+  box-shadow:
+    2px 2px 0 #f3ead7,
+    3px 3px 0 rgba(0, 0, 0, 0.12),
+    4px 4px 0 #f3ead7,
+    5px 5px 0 rgba(0, 0, 0, 0.12),
+    0 12px 18px rgba(50, 35, 15, 0.25),
+    0 0 26px 6px rgba(244, 143, 177, 0);
+  transition: box-shadow 0.25s ease;
+}
+
+.iterate-cover:hover .iterate-cover-img,
+.iterate-cover:focus-visible .iterate-cover-img {
+  box-shadow:
+    2px 2px 0 #f3ead7,
+    3px 3px 0 rgba(0, 0, 0, 0.12),
+    4px 4px 0 #f3ead7,
+    5px 5px 0 rgba(0, 0, 0, 0.12),
+    0 12px 18px rgba(50, 35, 15, 0.25),
+    0 0 26px 6px rgba(244, 143, 177, 0.85);
+}
+
+.iterate-cover-book {
+  position: relative;
+  display: block;
+}
+
+/* Spine shading; inset shadows don't paint over an <img>. */
+.iterate-cover-book::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  z-index: 1;
+  width: 0.6rem;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.05) 70%, transparent);
+  pointer-events: none;
+}
+
+/* Pink push pin holding the book to the About sheet. */
+.pushpin {
+  position: absolute;
+  top: -0.2rem;
+  left: 50%;
+  z-index: 2;
+  width: 1.2rem;
+  height: 1.2rem;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ff9fc0 0 14%, #ee5a8e 42%, #b3305c 100%);
+  box-shadow:
+    inset -1px -2px 2px rgba(110, 20, 50, 0.35),
+    2px 3px 3px rgba(40, 20, 10, 0.35);
+}
+
+/* The needle's shadow, falling down and to the right. */
+.pushpin::after {
+  content: "";
+  position: absolute;
+  top: 85%;
+  left: 62%;
+  z-index: -1;
+  width: 2px;
+  height: 0.6rem;
+  background: rgba(40, 20, 10, 0.3);
+  transform: rotate(-38deg);
+  transform-origin: top;
+  filter: blur(0.5px);
+}
+
+/* Flipbook popup. */
+.modal-backdrop:has(.iterate-dialog) {
+  background: rgba(26, 18, 11, 0.82);
+}
+
+.iterate-dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iterate-book {
+  filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.35));
+}
+
+.iterate-page {
+  background: #f6f0e4;
+}
+
+.iterate-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
+.iterate-close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  padding: 0 0.5rem;
+  color: #f6f0e4;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.iterate-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  color: #f6f0e4;
+}
+
+.iterate-controls button {
+  padding: 0 0.6rem;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.iterate-controls button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.v2 .iterate-close:focus-visible,
+.v2 .iterate-controls button:focus-visible {
+  outline-color: #f6f0e4;
+}
+
 .stamp {
   display: inline-block;
   transform: rotate(-4deg);
@@ -259,7 +418,7 @@ body,
   white-space: nowrap;
 }
 
-.project-dialog-backdrop {
+.modal-backdrop {
   display: flex;
   align-items: flex-start;
   overflow-y: auto;
@@ -268,11 +427,17 @@ body,
   animation: dialog-fade 0.2s ease;
 }
 
-.project-dialog {
-  margin-top: auto;
-  margin-bottom: auto;
-  transform: rotate(-0.4deg);
+.modal-dialog {
+  margin: auto;
   animation: dialog-rise 0.25s ease;
+}
+
+.v2 .modal-dialog:focus {
+  outline: none;
+}
+
+.project-dialog {
+  rotate: -0.4deg;
 }
 
 @keyframes dialog-fade {
@@ -284,17 +449,22 @@ body,
 @keyframes dialog-rise {
   from {
     opacity: 0;
-    transform: translateY(1rem) rotate(-0.4deg);
+    transform: translateY(1rem);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .index-card-preview {
+  .index-card-preview,
+  .iterate-cover {
     transition: none;
   }
 
-  .project-dialog-backdrop,
-  .project-dialog {
+  .iterate-cover-img {
+    transition: none;
+  }
+
+  .modal-backdrop,
+  .modal-dialog {
     animation: none;
   }
 }

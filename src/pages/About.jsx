@@ -1,9 +1,18 @@
+import { Suspense, lazy, useCallback, useState } from "react";
 import drawing from "../img/name/jappun-drawing.png";
 import aboutTitle from "../img/sections/about-ink.png";
+import iterateCover from "../img/iterate/cover-thumb.webp";
 import { Section } from "../components/Section";
 import { PaperTapes, aboutTapes, drawingTapes } from "../components/Tape";
 
+// The flipbook (and its page images) only load once someone opens it.
+const loadBook = () => import("../components/IterateBook");
+const IterateBook = lazy(loadBook);
+
 const About = () => {
+  const [bookOpen, setBookOpen] = useState(false);
+  const closeBook = useCallback(() => setBookOpen(false), []);
+
   return (
     <Section titleSrc={aboutTitle} titleAlt="About Me" rotate={-1.1}>
       <div className="sheet relative px-5 py-8 md:px-10 md:py-10">
@@ -19,7 +28,7 @@ const About = () => {
               <span key={index} className="tape tape-sm" style={style} aria-hidden="true" />
             ))}
           </div>
-          <div className="w-full text-left text-lg leading-relaxed">
+          <div className="w-full text-left text-lg leading-relaxed md:pr-16">
             <p className="text-xl">
               Welcome to my little corner of the Internet. Great to have you here.
             </p>
@@ -42,9 +51,7 @@ const About = () => {
                   PieLine
                 </a>
               </li>
-              <li>
-                Looking for a full-time role at a startup where my title doesn&apos;t limit what I get to work on
-              </li>
+              
               <li>
                 Writing all kinds of things: plays, short stories, notes app entries, etc.
               </li>
@@ -60,7 +67,26 @@ const About = () => {
             </p>
           </div>
         </div>
+        <button
+          type="button"
+          className="iterate-cover hidden md:block"
+          onClick={() => setBookOpen(true)}
+          onMouseEnter={loadBook}
+          onFocus={loadBook}
+          aria-haspopup="dialog"
+          aria-label="Read Learning to Iterate"
+        >
+          <span className="pushpin" aria-hidden="true" />
+          <span className="iterate-cover-book">
+            <img src={iterateCover} alt="" className="iterate-cover-img" />
+          </span>
+        </button>
       </div>
+      {bookOpen && (
+        <Suspense fallback={null}>
+          <IterateBook onClose={closeBook} />
+        </Suspense>
+      )}
     </Section>
   );
 };

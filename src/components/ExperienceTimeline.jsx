@@ -3,7 +3,6 @@ import { PaperTapes, experienceTapes, logoTapes } from "./Tape";
 
 const LINK_CLASS = "text-link";
 
-const STRIP_COLORS = ["#f7f1e3", "#fbf6ea", "#f3ead7", "#f8f2e6", "#f4efe2"];
 const STRIP_ROTATIONS = [-0.7, 0.55, -0.35, 0.7, -0.45];
 
 const renderBullet = (bullet) => {
@@ -50,7 +49,6 @@ const ExperienceEntry = ({ experience, index }) => {
     <article
       className="paper-strip relative mb-7 px-4 py-5 md:px-6 md:py-6"
       style={{
-        backgroundColor: STRIP_COLORS[index % STRIP_COLORS.length],
         transform: `rotate(${STRIP_ROTATIONS[index % STRIP_ROTATIONS.length]}deg)`,
       }}
     >
@@ -79,7 +77,7 @@ const ExperienceEntry = ({ experience, index }) => {
       </ul>
       <div className="mt-4 flex flex-wrap gap-2">
         {tech.map((item) => (
-          <span key={item} className="bg-[#fff3a1] px-1 text-sm">
+          <span key={item} className="tech-tag text-sm">
             {item}
           </span>
         ))}

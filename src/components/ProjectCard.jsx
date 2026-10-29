@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { createPortal } from "react-dom";
+import { useCallback, useState } from "react";
 import { cn } from "../utils/cn";
+import { Modal } from "./Modal";
 import { PaperTapes, allProjectsTapes } from "./Tape";
 
 const ROTATIONS = [-1.2, 0.9, -0.6, 1.1, -0.9, 0.5];
@@ -60,71 +60,44 @@ const IndexCard = ({ item, index, onOpen }) => (
 );
 
 const ProjectDialog = ({ item, onClose }) => {
-  const closeRef = useRef(null);
-
-  useEffect(() => {
-    const opener = document.activeElement;
-    const onKey = (event) => event.key === "Escape" && onClose();
-    const { overflow } = document.body.style;
-
-    document.body.style.overflow = "hidden";
-    document.addEventListener("keydown", onKey);
-    closeRef.current?.focus();
-
-    return () => {
-      document.body.style.overflow = overflow;
-      document.removeEventListener("keydown", onKey);
-      opener?.focus();
-    };
-  }, [onClose]);
-
   const links = <ProjectLinks github={item.github} live={item.live} />;
 
-  // Portal into the page root so it sits above every section and keeps the v2 styles.
-  return createPortal(
-    <div
-      className="project-dialog-backdrop"
-      style={{ position: "fixed", inset: 0, zIndex: 50 }}
-      onClick={(event) => event.target === event.currentTarget && onClose()}
+  return (
+    <Modal
+      onClose={onClose}
+      labelledBy={`${item.id}-title`}
+      className="index-card project-dialog mx-auto w-full max-w-2xl text-base md:text-lg"
     >
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby={`${item.id}-title`}
-        className="index-card project-dialog mx-auto w-full max-w-2xl text-base md:text-lg"
-      >
-        <CardHeader item={item} titleId={`${item.id}-title`} subtitle={links} size="lg">
-          {item.status && <span className="stamp">{item.status}</span>}
-          <button
-            ref={closeRef}
-            type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="ml-auto self-start px-2 text-2xl leading-none hover:bg-[#ffe45c]"
-          >
-            ×
-          </button>
-        </CardHeader>
-        <div className="index-card-lines index-card-lines-full">
-          <p className="mb-[var(--rule)]">{item.description}</p>
-          {item.bullets && (
-            <ul className="list-disc pl-5">
-              {item.bullets.map((bullet) => (
-                <li key={bullet}>{bullet}</li>
-              ))}
-            </ul>
-          )}
-          <p className="flex flex-wrap gap-x-2 text-sm">
-            {item.tech.map((tech) => (
-              <span key={tech} className="tech-tag">
-                {tech}
-              </span>
+      <CardHeader item={item} titleId={`${item.id}-title`} subtitle={links} size="lg">
+        {item.status && <span className="stamp">{item.status}</span>}
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          data-autofocus
+          className="ml-auto self-start px-2 text-2xl leading-none hover:bg-highlight"
+        >
+          ×
+        </button>
+      </CardHeader>
+      <div className="index-card-lines index-card-lines-full">
+        <p className="mb-[var(--rule)]">{item.description}</p>
+        {item.bullets && (
+          <ul className="list-disc pl-5">
+            {item.bullets.map((bullet) => (
+              <li key={bullet}>{bullet}</li>
             ))}
-          </p>
-        </div>
+          </ul>
+        )}
+        <p className="flex flex-wrap gap-x-2 text-sm">
+          {item.tech.map((tech) => (
+            <span key={tech} className="tech-tag">
+              {tech}
+            </span>
+          ))}
+        </p>
       </div>
-    </div>,
-    document.querySelector(".v2") ?? document.body
+    </Modal>
   );
 };
 

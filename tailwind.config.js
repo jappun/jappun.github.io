@@ -10,6 +10,7 @@ export default {
         'primary': '#f1e0ff',
         'lighterSky' : "#1f154a",
         'sky' : "070025",
+        'highlight': '#f7b6ca',
       },
       fontFamily: {
         'mont': ['Montserrat', 'sans-serif'],
