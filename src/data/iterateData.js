@@ -15,23 +15,23 @@ export const iteratePages = [
   },
   {
     src: page2,
-    alt: "Handwritten notes taped to cardboard: “Long before I wrote a single line of code, writing fiction taught me to value one of the most important aspects of software engineering: iteration.” “Writing taught me to do the thing. Even when you’re not good yet. Just do the thing. Then perfect it. Then perfect it again. And again. And again…” “Below, you’ll find the title page of every typed draft of the first stageplay I ever wrote, annotated in retrospect.”",
+    alt: "Handwritten notes taped to cardboard.",
   },
   {
     src: page3,
-    alt: "Title page of the first draft, AJ(ay), with a cast list led by Ajay (AJ) Kang. Handwritten annotations: “What I knew the play would be about: being brown in Canada, growing up, Surrey, BC (where I grew up), a boy named Ajay.” “What I didn’t know yet: I was telling the wrong story. Also, all that above.”",
+    alt: "Title page of the first draft, AJ(ay), with a cast list led by Ajay (AJ) Kang. Handwritten annotations.",
   },
   {
     src: page4,
-    alt: "Title page of the next draft, Plan C, now led by Nina Grewal. Handwritten annotations: “Nina took on the central role. So did her relationship with her mom.” “And I filled pages with her world, instead.” “With Nina, I found a more effective way to highlight the cultural and generational dynamics I cared about.”",
+    alt: "Title page of the next draft, Plan C, now led by Nina Grewal. Handwritten annotations.",
   },
   {
     src: page5,
-    alt: "Title page of a draft titled “[a play]”, with the footnote “I don’t have a title yet.” Handwritten annotation: “Sometimes, I needed to take steps backward.”",
+    alt: "Title page of a draft titled “[a play]”, with the footnote “I don’t have a title yet.” Handwritten annotation.",
   },
   {
     src: page6,
-    alt: "Title page of the final draft, Mummyji Knows Best. Handwritten annotation: “Until eventually I had something I was proud of.”",
+    alt: "Title page of the final draft, Mummyji Knows Best. Handwritten annotation.",
   },
   {
     src: page7,
@@ -39,7 +39,7 @@ export const iteratePages = [
   },
   {
     src: page8,
-    alt: "Handwritten note: “Today, I keep the first page from my only handwritten draft of the script pinned to the wall above my desk. Next to it is a prop menu from the real production. Every day, I observe the contrast between messy beginnings and polished end products, reminding me both are essential to creating anything worthwhile.” Below it, a photo of the handwritten Plan C script page next to a painted Planet Earth menu.",
+    alt: "Handwritten note. Below it, a photo of the handwritten Plan C script page next to a painted Planet Earth menu.",
   },
 ];
 
